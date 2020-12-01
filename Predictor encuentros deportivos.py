@@ -14,7 +14,9 @@ def len_single_letter(letter, secuence):
         acum = acum + 1
   return acum
 
-partidos = input("Escribir de forma seguida los últimos resultados del equipo-L perdida, E empate, W victoria: ")
+partidos = "LLLWEWELLWEEWLLELWLWLLWLWWWLLLLLWWWWWWEEELELWWLWLELWLW" 
+
+#input("Escribir de forma seguida los últimos resultados del equipo-L perdida, E empate, W victoria: ")
 
 # Contamos cuantas victorias hay dado que ganó
 nWW = len_pattern_pair("WW", partidos)
@@ -88,3 +90,21 @@ print("Probabilidad de que empate a pesar de haber perdido el partido anterior",
 print("Probabilidad de que pierda a pesar de haber ganado el partido anterior ",P_L_W)
 print("Probabilidad de que pierda a pesar de haber empatado el partido anterior ",P_L_E)
 print("Probabilidad de que pierda a pesar de haber perdido el partido anterior",P_L_L)
+
+import numpy as np
+
+# Definimos cuantos juegos futuros queremos a futuro para la predicción (n = juegos futuros)
+n = 8
+
+print (n)
+
+# El estado inicial es que gane
+X0 = np.array([[1],[0],[0]])
+
+# Definimos la matriz de transición
+T = np.array([[P_W_W, P_E_W, P_L_W], [P_W_E, P_E_E,P_L_E], [P_W_L, P_E_L, P_L_L]])
+print("Matriz de transición: \n",T)
+
+# La matriz en el juego n 
+Xn = np.linalg.matrix_power(T,n)*X0
+print("Matriz T elevada a n:\n",Xn)
