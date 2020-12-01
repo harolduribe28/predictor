@@ -87,4 +87,4 @@ print("Probabilidad de que empate a pesar de haber empatado el partido anteior",
 print("Probabilidad de que empate a pesar de haber perdido el partido anterior",P_E_L)
 print("Probabilidad de que pierda a pesar de haber ganado el partido anterior ",P_L_W)
 print("Probabilidad de que pierda a pesar de haber empatado el partido anterior ",P_L_E)
-print("Probabilidad de que pierda a pesar de haber perdido el partido anteior",P_L_L)
+print("Probabilidad de que pierda a pesar de haber perdido el partido anterior",P_L_L)
