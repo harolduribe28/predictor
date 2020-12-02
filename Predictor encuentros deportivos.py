@@ -15,6 +15,7 @@ def len_single_letter(letter, secuence):
   return acum
 
 partidos = "LLLWEWELLWEEWLLELWLWLLWLWWWLLLLLWWWWWWEEELELWWLWLELWLW" 
+print("historico de resultados: ",partidos)
 
 #input("Escribir de forma seguida los últimos resultados del equipo-L perdida, E empate, W victoria: ")
 
@@ -81,22 +82,22 @@ P_E_L = nLE/nL
 # Probabilidad de que pierda dado que empató
 P_L_E = nEL/nE
 
-print("Probabilidad de que gane a pesar de haber ganado el partido anterior ",P_W_W)
-print("Probabilidad de que gane a pesar de haber empatado el partido anterior ",P_W_E)
-print("Probabilidad de que gane a pesar de haber perdido el partido anterior ",P_W_L)
-print("Probabilidad de que empate a pesar de haber ganado el partido anterior",P_E_W)
-print("Probabilidad de que empate a pesar de haber empatado el partido anteior",P_E_E)
-print("Probabilidad de que empate a pesar de haber perdido el partido anterior",P_E_L)
-print("Probabilidad de que pierda a pesar de haber ganado el partido anterior ",P_L_W)
-print("Probabilidad de que pierda a pesar de haber empatado el partido anterior ",P_L_E)
-print("Probabilidad de que pierda a pesar de haber perdido el partido anterior",P_L_L)
+#print("Probabilidad de que gane a pesar de haber ganado el partido anterior ",P_W_W)
+#print("Probabilidad de que gane a pesar de haber empatado el partido anterior ",P_W_E)
+#print("Probabilidad de que gane a pesar de haber perdido el partido anterior ",P_W_L)
+#print("Probabilidad de que empate a pesar de haber ganado el partido anterior",P_E_W)
+#print("Probabilidad de que empate a pesar de haber empatado el partido anteior",P_E_E)
+#print("Probabilidad de que empate a pesar de haber perdido el partido anterior",P_E_L)
+#print("Probabilidad de que pierda a pesar de haber ganado el partido anterior ",P_L_W)
+#print("Probabilidad de que pierda a pesar de haber empatado el partido anterior ",P_L_E)
+#print("Probabilidad de que pierda a pesar de haber perdido el partido anterior",P_L_L)
 
 import numpy as np
 
 # Definimos cuantos juegos futuros queremos a futuro para la predicción (n = juegos futuros)
 n = 8
 
-print (n)
+print ("número de partidos donde se estabiliza el sistema:",n)
 
 # El estado inicial es que gane
 X0 = np.array([[1],[0],[0]])
