@@ -14,10 +14,11 @@ def len_single_letter(letter, secuence):
         acum = acum + 1
   return acum
 
-partidos = "LLLWEWELLWEEWLLELWLWLLWLWWWLLLLLWWWWWWEEELELWWLWLELWLW" 
-print("historico de resultados: ",partidos)
+#partidos = "LLLWEWELLWEEWLLELWLWLLWLWWWLLLLLWWWWWWEEELELWWLWLELWLW" 
+partidos= input("Escribir de forma seguida los últimos resultados del equipo-L perdida, E empate, W victoria: ")
 
-#input("Escribir de forma seguida los últimos resultados del equipo-L perdida, E empate, W victoria: ")
+
+
 
 # Contamos cuantas victorias hay dado que ganó
 nWW = len_pattern_pair("WW", partidos)
@@ -95,17 +96,21 @@ P_L_E = nEL/nE
 import numpy as np
 
 # Definimos cuantos juegos futuros queremos a futuro para la predicción (n = juegos futuros)
-n = 8
+n = int(input("Partidos donde se estabiliza el sistema:"))
 
-print ("número de partidos donde se estabiliza el sistema:",n)
+#print ("Número de partidos donde se estabiliza el sistema:",n)
 
 # El estado inicial es que gane
 X0 = np.array([[1],[0],[0]])
 
 # Definimos la matriz de transición
 T = np.array([[P_W_W, P_E_W, P_L_W], [P_W_E, P_E_E,P_L_E], [P_W_L, P_E_L, P_L_L]])
-print("Matriz de transición: \n",T)
+#print("Matriz de transición: \n",T)
 
 # La matriz en el juego n 
 Xn = np.linalg.matrix_power(T,n)*X0
-print("Matriz T elevada a n:\n",Xn)
+#print("Matriz T elevada a n:\n",Xn)
+print("Historico de resultados: ",partidos)
+print ("La probabilidad de ganar el siguiente juego es: ",Xn[0,0])
+print ("La probabilidad de empatar el siguiente juego es: ",Xn[0,1])
+print ("La probabilidad de perder el siguiente juego es: ",Xn[0,2])
