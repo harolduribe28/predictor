@@ -96,7 +96,7 @@ P_L_E = nEL/nE
 import numpy as np
 
 # Definimos cuantos juegos futuros queremos a futuro para la predicción (n = juegos futuros)
-n = int(input("Partidos donde se estabiliza el sistema:"))
+n = int(input("Partidos futuros a predecir:"))
 
 #print ("Número de partidos donde se estabiliza el sistema:",n)
 
